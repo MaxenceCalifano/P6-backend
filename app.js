@@ -3,13 +3,14 @@ const express = require("express");
 const req = require("express/lib/request");
 const res = require("express/lib/response");
 const mongoose = require("mongoose");
+//const path = require("path");
 
 const dotenv = require("dotenv");
 dotenv.config();
 /* const path = require("path");
 
-const stuffRoutes = require("./Routes/stuff");
-const userRoutes = require("./Routes/user"); */
+const stuffRoutes = require("./Routes/stuff");*/
+const userRoutes = require("./routes/user");
 
 const app = express();
 
@@ -36,7 +37,7 @@ app.use((req, res, next) => {
 
 app.use(express.json()); //Intercepte toutes les requetes qui ont comme content-type application/json et met leur body à disposition
 /*app.use("/images", express.static(path.join(__dirname, "images")));
-app.use("/api/stuff", stuffRoutes);
-app.use("/api/auth", userRoutes); */
+app.use("/api/stuff", stuffRoutes);*/
+app.use("/api/auth", userRoutes);
 
 module.exports = app;
