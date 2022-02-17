@@ -8,7 +8,6 @@ const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config();
 
-//const stuffRoutes = require("./Routes/stuff");*/
 const userRoutes = require("./routes/user");
 const sauceRoutes = require("./routes/sauce");
 
