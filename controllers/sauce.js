@@ -26,7 +26,6 @@ exports.getOneSauce = (req, res, next) => {
 };
 
 exports.modifySauce = (req, res, next) => {
-  console.log(req);
   const sauceObject = req.file
     ? {
         ...JSON.parse(req.body.sauce),
@@ -112,58 +111,6 @@ exports.likeDislike = (req, res, next) => {
       default :
             console.log('erreur');
           }
-      /* if (req.body.like === 1) {
-          usersLiked.push(userId);
-              Sauce.updateOne(
-              { _id: req.params.id },
-              { $set: { usersLiked: usersLiked, likes: usersLiked.length } }
-        )
-          .then(() => res.status(200).json({ message: "la sauce a été likée" }))
-          .catch((error) => res.status(400).json({ error }));
-
-      } else if (req.body.like === 0) {
-        if (usersLiked.includes(userId)) {
-              usersLiked.splice(usersLiked.indexOf(userId), 1);
-              Sauce.updateOne(
-                { _id: req.params.id },
-                { $set: { usersLiked: usersLiked, likes: usersLiked.length } }
-          )
-            .then(() =>
-              res.status(200).json({ message: "la sauce a été unlikée" })
-            )
-            .catch((error) => res.status(400).json({ error }));
-        } else {
-            usersDisliked.splice(usersDisliked.indexOf(userId), 1);
-            Sauce.updateOne(
-                { _id: req.params.id },
-                {
-                  $set: {
-                    usersDisliked: usersDisliked,
-                    dislikes: usersDisliked.length,
-                  },
-                }
-            )
-            .then(() =>
-              res.status(200).json({ message: "la sauce a été undislikée" })
-            )
-            .catch((error) => res.status(400).json({ error }));
-        }
-      } else if (req.body.like === -1) {
-        usersDisliked.push(userId);
-        Sauce.updateOne(
-          { _id: req.params.id },
-          {
-            $set: {
-              usersDisliked: usersDisliked,
-              dislikes: usersDisliked.length,
-            },
-          }
-        )
-          .then(() => res.status(200).json({ message: "la sauce a été dislikée" }))
-          .catch((error) => res.status(400).json({ error }));
-      } else {
-        console.log("erreur")
-      } */
       });
 };
 
