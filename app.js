@@ -17,7 +17,7 @@ const app = express();
 
 app.use(helmet({
   crossOriginResourcePolicy: false,
-})); //Appel tous les middleware d'Helmet
+})); //Appel tous les middleware d'Helmet mais autorise CORS
 app.use(session({  
   secret: 'HWBhliqRod',
   key: 'someCookie',
